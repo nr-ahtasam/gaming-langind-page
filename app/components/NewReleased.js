@@ -3,8 +3,13 @@ import layer from "@/public/images/showcase-layer.png";
 import upshadow from "@/public/images/UP_SHADOW.png";
 import React from "react";
 import NewReleaseCard from "@/app/components/NewReleaseCard";
+import { useInView } from "react-intersection-observer";
 
 const NewReleased = () => {
+  const { ref, inView, entry } = useInView({
+    triggerOnce: true,
+  });
+
   return (
     <div
       style={{
@@ -38,15 +43,37 @@ const NewReleased = () => {
           <button className="rounded-3xl  text-xs font-bold px-4 py-px">PS5</button>
           <button className="rounded-3xl  text-xs font-bold px-4 py-px">X-BOX</button>
         </div>
-        <div className="grid grid-cols-4 gap-6 max-w-[1040px] mx-auto">
-          <NewReleaseCard/>
-          <NewReleaseCard/>
-          <NewReleaseCard/>
-          <NewReleaseCard/>
-          <NewReleaseCard/>
-          <NewReleaseCard/>
-          <NewReleaseCard/>
-          <NewReleaseCard/>
+        <div className=" max-w-[1040px] mx-auto">
+          <div ref={ref}
+               className={`grid mb-6 grid-cols-4 gap-6 transition-all delay-200
+                duration-1000 transform ${
+                 inView ? 'translate-x-0 ' : '-translate-x-full '
+               }`}
+               style={{
+                 opacity: inView ? 1 : 0,
+               }}
+
+          >
+            <NewReleaseCard/>
+            <NewReleaseCard/>
+            <NewReleaseCard/>
+            <NewReleaseCard/>
+          </div>
+          <div ref={ref}
+               className={`grid grid-cols-4 gap-6 transition-all delay-700 duration-1000 transform ${
+                 inView ? 'translate-x-0 ' : 'translate-x-full '
+               }`}
+               style={{
+                 opacity: inView ? 1 : 0,
+               }}
+          >
+            <NewReleaseCard/>
+            <NewReleaseCard/>
+            <NewReleaseCard/>
+            <NewReleaseCard/>
+          </div>
+
+
         </div>
         <div>
           <img src={upshadow.src} className="w-full"/>

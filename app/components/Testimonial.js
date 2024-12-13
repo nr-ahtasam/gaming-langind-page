@@ -4,8 +4,12 @@ import TestimonialCard from "@/app/components/TestimonialCard";
 import manVr from "@/public/images/man-vr.png"
 import womanVr from "@/public/images/woman-vr.png"
 import YellowLine from "@/app/components/LineBox/YellowLine";
+import {useInView} from "react-intersection-observer";
 
 const Testimonial = () => {
+  const {ref, inView, entry} = useInView({
+    triggerOnce: true,
+  });
   return (
     <div className="max-w-[1040px] mx-auto my-40">
 
@@ -15,8 +19,35 @@ const Testimonial = () => {
           What our customers are <br/> saying
         </h2>
         <div className="flex justify-center items-center gap-6">
-          <TestimonialCard vrImg={manVr}/>
-          <TestimonialCard vrImg={womanVr} rotate={180}/>
+          <div ref={ref}
+               className={`transition-all duration-1000  ${
+                 inView ? 'translate-x-0 ' : '-translate-x-full '
+               }'
+              }`}
+               style={{
+                 opacity: inView ? 1 : 0,
+                 transitionDelay: "200ms"
+               }}>
+            <TestimonialCard
+              vrImg={manVr}
+            />
+          </div>
+
+          <div ref={ref}
+               className={`transition-all duration-1000  ${
+                 inView ? 'translate-x-0 ' : 'translate-x-full '
+               }'
+              }`}
+               style={{
+                 opacity: inView ? 1 : 0,
+                 transitionDelay: "200ms"
+               }}>
+            <TestimonialCard
+              vrImg={manVr}
+              rotate={180}
+            />
+          </div>
+
         </div>
 
       </div>

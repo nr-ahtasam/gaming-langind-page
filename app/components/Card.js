@@ -1,7 +1,11 @@
 import React from "react";
 import card1 from "@/public/images/we-do-1.png";
+import {useInView} from "react-intersection-observer";
 
-const Card = ({image, buttonText, desc, color}) => {
+const Card = ({image, buttonText, desc, color, delay}) => {
+  const { ref, inView, entry } = useInView({
+    triggerOnce: true,
+  });
   return (
     <div className="bg-[#20202E] max-w-[300px] w-fit border-t-2" style={{
       borderColor: color,
@@ -15,7 +19,14 @@ const Card = ({image, buttonText, desc, color}) => {
         {buttonText}
       </button>
 
-      <p className="p-6 ">
+      <p
+        ref={ref}
+        style={{
+          opacity: inView ? 1 : 0,
+          transitionDelay: inView ? `${delay}ms` : "0ms",
+        }}
+        className={`transition-all duration-1000 transform ${
+        inView ? `translate-x-0` : '-translate-x-full'} p-6`}>
         {desc}
       </p>
 

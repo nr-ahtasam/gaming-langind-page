@@ -25,12 +25,15 @@ const Branding = () => {
           <Card image={card1} buttonText="Video Game Suppliers"
                 desc="List of carefully selected, verified, high quality suppilers, in differret regions worldwide."
                 color="#61FFDA"
+                delay={50}
           /><Card image={card1} buttonText="Video Game Suppliers"
                   desc="List of carefully selected, verified, high quality suppilers, in differret regions worldwide."
                   color="#7B61FF"
+                  delay={600}
         /><Card image={card1} buttonText="Video Game Suppliers"
                 desc="List of carefully selected, verified, high quality suppilers, in differret regions worldwide."
                 color="#FF626B"
+                delay={1200}
         />
         </div>
 
