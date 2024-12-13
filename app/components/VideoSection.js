@@ -8,7 +8,7 @@ const VideoSection = () => {
     <div className="container mx-auto my-40">
       <article className="flex justify-between ">
         <div className="w-1/2">
-          <Video src={video1} />;
+          <Video src={video1} />
         </div>
 
         <div className="w-1/2 flex  flex-col justify-between">
