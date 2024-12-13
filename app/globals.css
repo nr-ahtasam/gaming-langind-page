@@ -19,3 +19,80 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.line-box {
+  position: relative;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 20px 10px;
+}
+
+.line-box::before,
+.line-box::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  background-color: #fff;
+  width: 40px;
+  top: 55%;
+  transform: translateY(-50%);
+  border-radius: 100%;
+}
+
+.line-box::before {
+  left: 100%;
+}
+
+.line-box::after {
+  right: 100%;
+
+}
+
+/*branding slider css*/
+/*branding slider css*/
+.custom-image {
+  display: block;
+  width: 100%;
+}
+
+.custom-section {
+  width: 100%;
+  overflow: hidden;
+}
+
+.custom-article {
+  display: flex;
+  width: calc(200% + 20px); /* Adjust width to account for the gap */
+  animation: custom-bannermove 20s linear infinite;
+}
+
+.custom-article.paused {
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+.custom-image-container {
+  width: 100%;
+}
+
+.custom-ul {
+  display: flex;
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+  gap: 20px; /* Add gap between images */
+}
+
+.custom-li {
+  width: calc(100% - 20px); /* Adjust width to account for the gap */
+}
+
+@keyframes custom-bannermove {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 10px)); /* Adjust translation to account for the gap */
+  }
+}

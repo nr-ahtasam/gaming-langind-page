@@ -1,7 +1,11 @@
+import ReactPlayer from 'react-player';
+import Video from 'next-video';
+import Player from 'next-video/player';
 import thumbnail from '@/public/images/video-thumbnail.png'
 import {useInView} from "react-intersection-observer";
 import {useEffect, useState} from "react";
 
+import video1 from '@/videos/video1.mp4.json'
 const VideoSection = () => {
   const {ref, inView, entry} = useInView({
     triggerOnce: true,
@@ -10,12 +14,8 @@ const VideoSection = () => {
   return (
     <div className="container mx-auto my-40">
       <article className="flex justify-between ">
-        <div className="w-1/2 ">
-          <img
-            alt=""
-            src={thumbnail.src}
-            className=" h-full w-full object-cover"
-          />
+        <div className="w-1/2">
+          <Video src={video1} />
         </div>
 
         <div className="w-1/2 flex  flex-col justify-between">
