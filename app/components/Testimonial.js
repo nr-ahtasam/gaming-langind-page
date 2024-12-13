@@ -3,13 +3,14 @@ import React from "react";
 import TestimonialCard from "@/app/components/TestimonialCard";
 import manVr from "@/public/images/man-vr.png"
 import womanVr from "@/public/images/woman-vr.png"
+import YellowLine from "@/app/components/LineBox/YellowLine";
 
 const Testimonial = () => {
   return (
     <div className="max-w-[1040px] mx-auto my-40">
 
       <div className="mt-10 flex flex-col justify-center items-center">
-        <LineBox text="TESTIMONIALS" color="#F68E5F"/>
+        <YellowLine text="TESTIMONIALS" color="#F68E5F"/>
         <h2 className="text-2xl my-4 text-center font-bold">
           What our customers are <br/> saying
         </h2>

@@ -1,0 +1,29 @@
+
+.line-box-white {
+    position: relative;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 20px 10px;
+}
+
+.line-box-white::before,
+.line-box-white::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    background-color: #fff;
+    width: 40px;
+    top: 55%;
+    transform: translateY(-50%);
+    border-radius: 100%;
+}
+
+.line-box-white::before {
+    left: 100%;
+}
+
+.line-box-white::after {
+    right: 100%;
+
+}

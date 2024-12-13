@@ -1,0 +1,29 @@
+
+.line-box-yellow {
+    position: relative;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 20px 10px;
+}
+
+.line-box-yellow::before,
+.line-box-yellow::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    background-color: #F68E5F;
+    width: 40px;
+    top: 55%;
+    transform: translateY(-50%);
+    border-radius: 100%;
+}
+
+.line-box-yellow::before {
+    left: 100%;
+}
+
+.line-box-yellow::after {
+    right: 100%;
+
+}

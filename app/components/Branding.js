@@ -5,6 +5,7 @@ import Card from "./Card";
 import card1 from "@/public/images/we-do-1.png";
 import ellipse1 from "@/public/images/Ellipse1.png";
 import ellipse2 from "@/public/images/Ellipse2.png";
+import YellowLine from "@/app/components/LineBox/YellowLine";
 
 const Branding = () => {
   return (
@@ -15,7 +16,7 @@ const Branding = () => {
           <img src={branding.src} className=""/>
         </div>
         <div className="mt-40 flex flex-col justify-center items-center">
-          <LineBox text="What we do" color="#F68E5F" bgcolor="red"/>
+          <YellowLine text="What we do" color="#F68E5F" bgcolor="red"/>
           <h2 className="text-2xl my-4 text-center font-bold">
             Meeting the needs of players <br/> across the world
           </h2>
